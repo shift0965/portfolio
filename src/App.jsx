@@ -11,7 +11,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           {/* <Route path="/" element={<MainPage />}></Route> */}
-          <Route path="/" element={<AboutPage />}></Route>
+          <Route path="/portfolio/" element={<AboutPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
