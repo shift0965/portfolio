@@ -42,12 +42,12 @@ const About = (props) => {
           <img
             src={me_hang_md_bgremoved}
             alt="me"
-            className="h-full rounded-xl mx-auto object-right duration-300 md:block hidden bg-light/70"
+            className="h-full rounded-xl mx-auto object-right md:block hidden bg-light/70"
           />
           <img
             src={me_hang_sm_bgremoved}
             alt="me"
-            className="h-full rounded-md mx-auto duration-300 md:hidden block bg-light/70"
+            className="h-full rounded-md mx-auto md:hidden block bg-light/70"
           />
         </div>
 

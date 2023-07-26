@@ -56,7 +56,7 @@ const Projects = (props) => {
         {project_info.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className=" w-full xl:py-[50px] md:py-[34px] py-3 px-5 grid grid-col-1 justify-center">
+              <div className=" w-full xl:py-[50px] md:py-[30px] py-[10px] px-5 grid grid-col-1 justify-center">
                 <div className="h-44 flex justify-center">{item.img}</div>
                 <div className="data mt-4">
                   <h4 className=" font-bold">{item.title}</h4>

@@ -7,11 +7,11 @@ import ScrollToTop from "./components/SrollToTop";
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/portfolio">
         <ScrollToTop />
         <Routes>
-          <Route path="/portfolio/" element={<MainPage />}></Route>
-          <Route path="/portfolio/aboutPage" element={<AboutPage />}></Route>
+          <Route path="/" element={<MainPage />}></Route>
+          <Route path="/aboutPage" element={<AboutPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

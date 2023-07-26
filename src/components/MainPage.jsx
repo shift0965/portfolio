@@ -10,39 +10,32 @@ import { useEffect } from "react";
 import { FullPage, Slide } from "react-full-page";
 
 const MainPage = () => {
-  const [currPage, setCurrPage] = useState("home");
-  const [height, setHeight] = useState(window.innerHeight);
+  const [currPage, setCurrPage] = useState(null);
+  const DELAY_TIME = 700;
+  const delaySetCurrPage = (value) => {
+    if (currPage !== value && currPage !== "pending") {
+      setCurrPage("pending");
+      setTimeout(() => {
+        setCurrPage(value);
+      }, DELAY_TIME);
+    }
+  };
 
   const customControls = (props) => {
     const currentSlideIndex = props.getCurrentSlideIndex();
-    if (currentSlideIndex === 0) setCurrPage("home");
-    if (currentSlideIndex === 1) setCurrPage("about");
-    if (currentSlideIndex === 2) setCurrPage("projects");
-    if (currentSlideIndex === 3) setCurrPage("contact");
+    useEffect(() => {
+      if (currentSlideIndex === 0) delaySetCurrPage("home");
+      if (currentSlideIndex === 1) delaySetCurrPage("about");
+      if (currentSlideIndex === 2) delaySetCurrPage("projects");
+      if (currentSlideIndex === 3) delaySetCurrPage("contact");
+    }, [currentSlideIndex]);
   };
-
-  //get inner window height
-  useEffect(() => {
-    const updateWindowDimensions = () => {
-      const newHeight = window.innerHeight;
-      setHeight(newHeight);
-      console.log(newHeight);
-    };
-    window.addEventListener("resize", updateWindowDimensions);
-
-    return () => window.removeEventListener("resize", updateWindowDimensions);
-  }, []);
 
   return (
     <motion.div
-      initial={{ x: -window.innerWidth, w: 0, opacity: 1 }}
-      animate={{ x: 0, w: "100%", opacity: 1 }}
-      exit={{
-        x: -window.innerWidth,
-        opacity: 0,
-        w: 0,
-        transition: { duration: 0.3 },
-      }}
+      initial={{ x: -window.innerWidth, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
     >
       <div
         className={`${
@@ -71,7 +64,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <FullPage controls={customControls} duration={1100}>
+      <FullPage controls={customControls} duration={1000}>
         <Slide>
           <Home isActive={currPage === "home"} />
         </Slide>

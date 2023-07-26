@@ -8,23 +8,16 @@ import {
 } from "./Information";
 import { VscTriangleDown } from "react-icons/vsc";
 import { IoSchoolOutline, IoChevronBackOutline } from "react-icons/io5";
-
 import { motion } from "framer-motion";
 import { VscDebugStart } from "react-icons/vsc";
-
 import me_smile_bgremoved from "./imgs/me_smile_1000_1400_bgremoved.png";
 
 const AboutPage = () => {
   return (
     <motion.div
-      initial={{ x: window.innerWidth, w: 0, opacity: 0 }}
-      animate={{ x: 0, opacity: 1, w: "100%" }}
-      exit={{
-        x: window.innerWidth,
-        opacity: 0,
-        w: 0,
-        transition: { duration: 0.3 },
-      }}
+      initial={{ x: window.innerWidth, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.7 }}
       className="aboutPage bg-tx w-full h-full text-tx-dark"
     >
       <div className="container">
