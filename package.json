@@ -2,31 +2,25 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://shift0965.github.io/portfolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
-    "@fullpage/react-fullpage": "^0.1.40",
     "framer-motion": "^10.13.1",
-    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-full-page": "^0.1.12",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",
     "swiper": "^10.0.4",
     "typewriter-effect": "^2.20.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
