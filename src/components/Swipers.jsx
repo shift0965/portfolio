@@ -14,28 +14,6 @@ const Swipers = (props) => {
     setActiveIndex(swiper.activeIndex);
   };
 
-  //prevent user from scrolling parent elements
-  useEffect(() => {
-    const preventScroll = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-    };
-
-    // Attach the event listener for touch devices
-    if ("ontouchstart" in window) {
-      document.body.addEventListener("touchmove", preventScroll, {
-        passive: false,
-      });
-    }
-
-    // Remove the event listener when the component unmounts
-    return () => {
-      if ("ontouchstart" in window) {
-        document.body.removeEventListener("touchmove", preventScroll);
-      }
-    };
-  }, []);
-
   return (
     <Swiper
       onActiveIndexChange={printoutNum}
