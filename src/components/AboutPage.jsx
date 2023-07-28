@@ -42,7 +42,7 @@ const AboutPage = () => {
           }`}
         >
           <div className="content grid sm:grid-cols-11 grid-cols-5 items-center gap-4">
-            <div className=" col-span-5 sm:order-1 order-0 w-9/12 mx-auto bg-secondary-second/20 rounded-full overflow-hidden flex">
+            <div className=" col-span-5 sm:order-1 order-0 w-9/12 aspect-[10/14] mx-auto bg-secondary-second/20 rounded-full overflow-hidden flex">
               <img
                 src={me_smile_bgremoved}
                 alt="me"
