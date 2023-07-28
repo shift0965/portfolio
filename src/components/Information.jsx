@@ -10,20 +10,24 @@ import {
 import { CgWebsite } from "react-icons/cg";
 import sorting from "./imgs/sorting.jpg";
 import tedxNSYSU from "./imgs/tedx.png";
-
+import mysql from "./imgs/mysql.png";
 import js from "./imgs/js.png";
 import react from "./imgs/atom.png";
 import css from "./imgs/css-3.png";
 import html from "./imgs/html-5.png";
 import letscode from "./imgs/letscode.png";
-//import java from './imgs/java.png'
-//import python from './imgs/python.png'
-import postman from "./imgs/postman.png";
 import express from "./imgs/expressjs.png";
 import mongodb from "./imgs/mongodb.png";
 import tailwind from "./imgs/tailwind.png";
 import nodejs from "./imgs/nodejs.png";
 import shiportfolio from "./imgs/shiportfolio.png";
+import redis from "./imgs/redis.png";
+import socket_io from "./imgs/socket_io.png";
+import rds from "./imgs/rds.png";
+import ec2 from "./imgs/ec2.png";
+import elasticache from "./imgs/elasticache.png";
+import docker from "./imgs/docker.png";
+import git from "./imgs/git.png";
 
 export const project_info = [
   {
@@ -77,7 +81,7 @@ export const skill_info = [
   {
     title: "Front-end",
     describe: "",
-    icon: <AiTwotoneBuild className=" h-full w-2/3 text-secondary-second" />,
+    icon: <AiTwotoneBuild className="h-full w-full text-secondary-second" />,
     childSet: [
       {
         setName: "Langauge",
@@ -114,7 +118,7 @@ export const skill_info = [
   {
     title: "Back-end",
     describe: "",
-    icon: <AiFillDatabase className=" h-full w-2/3 text-secondary-second" />,
+    icon: <AiFillDatabase className=" h-full w-full text-secondary-second" />,
     childSet: [
       {
         setName: "Database",
@@ -123,18 +127,67 @@ export const skill_info = [
             icon: <img src={mongodb} alt="icon" />,
             skillName: "Mongodb",
           },
+          {
+            icon: <img src={mysql} className="p-[2px]" alt="icon" />,
+            skillName: "Mysql",
+          },
+          {
+            icon: <img src={redis} className="p-[2px]" alt="icon" />,
+            skillName: "Redis",
+          },
         ],
       },
       {
-        setName: "Platform and framework",
+        setName: "Framework",
         skillSet: [
           {
-            icon: <img src={nodejs} alt="icon" />,
+            icon: <img src={nodejs} className="p-[2px]" alt="icon" />,
             skillName: "Node.js",
           },
           {
-            icon: <img src={express} alt="icon" />,
+            icon: <img src={express} className="p-[4px]" alt="icon" />,
             skillName: "Express",
+          },
+          {
+            icon: <img src={socket_io} className="p-[4px]" alt="icon" />,
+            skillName: "Socket.io",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Deployment",
+    describe: "",
+    icon: <AiFillDatabase className=" h-full w-full text-secondary-second" />,
+    childSet: [
+      {
+        setName: "Aws Cloud",
+        skillSet: [
+          {
+            icon: <img src={ec2} className="p-[2px]" alt="icon" />,
+            skillName: "EC2",
+          },
+          {
+            icon: <img src={rds} className="p-[2px]" alt="icon" />,
+            skillName: "RDS",
+          },
+          {
+            icon: <img src={elasticache} className="p-[2px]" alt="icon" />,
+            skillName: "Elasticache",
+          },
+        ],
+      },
+      {
+        setName: "Develop",
+        skillSet: [
+          {
+            icon: <img src={docker} alt="icon" />,
+            skillName: "Docker",
+          },
+          {
+            icon: <img src={git} className="p-[4px]" alt="icon" />,
+            skillName: "Git",
           },
         ],
       },

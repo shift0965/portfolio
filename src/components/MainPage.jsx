@@ -11,6 +11,7 @@ import { FullPage, Slide } from "react-full-page";
 
 const MainPage = () => {
   const [currPage, setCurrPage] = useState(null);
+
   const DELAY_TIME = 700;
   const delaySetCurrPage = (value) => {
     if (currPage !== value && currPage !== "pending") {
@@ -35,6 +36,7 @@ const MainPage = () => {
     <motion.div
       initial={{ x: -window.innerWidth, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -window.innerWidth, opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
       <div
