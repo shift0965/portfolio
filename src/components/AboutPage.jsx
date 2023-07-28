@@ -17,9 +17,9 @@ const AboutPage = () => {
   const [visible, setVisible] = useState(true);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handaleBack = () => {
     setVisible(false);

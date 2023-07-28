@@ -75,18 +75,17 @@ h3 {
 }
 
 h4 {
-  @apply md:text-2xl text-xl;
+  @apply xl:text-[28px] md:text-2xl text-xl;
 }
 
 h5 {
-  @apply md:text-xl text-lg;
+  @apply xl:text-2xl md:text-xl text-lg;
 }
 h6 {
-  @apply text-[14px];
+  @apply text-[16px];
 }
-
 p {
-  @apply text-light text-base;
+  @apply xl:text-lg text-light md:text-base text-[14px];
 }
 
 .aboutPage p {
