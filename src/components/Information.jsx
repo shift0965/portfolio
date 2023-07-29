@@ -1,4 +1,4 @@
-import { AiTwotoneBuild, AiFillDatabase } from "react-icons/ai";
+import { AiTwotoneBuild, AiFillDatabase, AiFillCloud } from "react-icons/ai";
 import { GoLocation } from "react-icons/go";
 import { BsPerson } from "react-icons/bs";
 import { VscGithubAlt } from "react-icons/vsc";
@@ -159,7 +159,7 @@ export const skill_info = [
   {
     title: "Deployment",
     describe: "",
-    icon: <AiFillDatabase className=" h-full w-full text-secondary-second" />,
+    icon: <AiFillCloud className=" h-full w-full text-secondary-second" />,
     childSet: [
       {
         setName: "Aws Cloud",
