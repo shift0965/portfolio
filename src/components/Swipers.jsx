@@ -42,6 +42,7 @@ const Swipers = (props) => {
                 </p>
                 <a
                   href={item.href}
+                  target="_blank"
                   className=" rounded-2xl py-1.5 px-7 inline-block md:mt-7 mt-5 duration-300
                                                      bg-secondary-second hover:bg-secondary hover:text-primary opacity-90 text-tx font-bold"
                 >
