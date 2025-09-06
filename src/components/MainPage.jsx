@@ -22,7 +22,7 @@ const MainPage = () => {
     }
   };
 
-  const customControls = (props) => {
+  const CustomControls = (props) => {
     const currentSlideIndex = props.getCurrentSlideIndex();
     useEffect(() => {
       if (currentSlideIndex === 0) delaySetCurrPage("home");
@@ -30,6 +30,7 @@ const MainPage = () => {
       if (currentSlideIndex === 2) delaySetCurrPage("projects");
       if (currentSlideIndex === 3) delaySetCurrPage("contact");
     }, [currentSlideIndex]);
+    return null;
   };
 
   return (
@@ -66,7 +67,7 @@ const MainPage = () => {
         </div>
       </div>
 
-      <FullPage controls={customControls} duration={1000}>
+      <FullPage controls={CustomControls} duration={1000}>
         <Slide>
           <Home isActive={currPage === "home"} />
         </Slide>
