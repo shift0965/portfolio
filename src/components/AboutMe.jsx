@@ -4,7 +4,7 @@ import lightBulb from "./imgs/lightBulb.png"
 const AboutMe = (props) => {
   return (
     <section id="contact" className="container">
-      <div className="head md:absolute text-tx-500 md:text-left xl:-left-18 md:-left-5 pb-2">
+      <div className="head md:absolute md:mb-10 mb-2 text-tx-500 md:text-left md:-left-5">
         <h2
           className={`${
             props.isActive
