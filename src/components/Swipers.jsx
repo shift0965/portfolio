@@ -1,8 +1,8 @@
 import { projectInfo } from "./Information";
-import { BsArrowLeft } from "react-icons/bs";
+import { BsArrowLeft, BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "swiper/css/navigation";
@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 const Swipers = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [projects, setProjects] = useState([]);
+  const swiperRef = useRef(null);
   const printoutNum = (swiper) => {
     setActiveIndex(swiper.activeIndex);
   };
@@ -33,9 +34,13 @@ const Swipers = (props) => {
     checkProjects();
   }, []);
 
+  const atStart = activeIndex === 0;
+  const atEnd = activeIndex === Math.max(0, projects.length - 1);
+
   return (
     <Swiper
       onActiveIndexChange={printoutNum}
+      onSwiper={(s) => (swiperRef.current = s)}
       effect={"cards"}
       grabCursor={true}
       modules={[EffectCards]}
@@ -77,10 +82,37 @@ const Swipers = (props) => {
           activeIndex === 0 ? "" : " -translate-x-72 opacity-0"
         }`}
       >
-        <p className="flex items-center lg:mt-4 mt-1">
+        <p className="md:flex items-center lg:mt-4 mt-1 hidden">
           <BsArrowLeft className=" mr-2" />
           swipe the card left
         </p>
+      </div>
+      <div className="md:hidden absolute -mb-4 inset-x-0 -bottom-10 flex items-center justify-between px-4">
+        <button
+          type="button"
+          aria-label="Previous"
+          disabled={atStart}
+          onClick={() => swiperRef.current?.slidePrev()}
+          className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold
+            bg-transparent border border-white/20 text-white
+            ${atStart ? "opacity-40 cursor-not-allowed" : "active:scale-95"}`}
+        >
+          <BsChevronLeft />
+          Prev
+        </button>
+
+        <button
+          type="button"
+          aria-label="Next"
+          disabled={atEnd}
+          onClick={() => swiperRef.current?.slideNext()}
+          className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold
+            bg-transparent border border-white/20 text-white
+            ${atEnd ? "opacity-40 cursor-not-allowed" : "active:scale-95"}`}
+        >
+          Next
+          <BsChevronRight />
+        </button>
       </div>
     </Swiper>
   );
