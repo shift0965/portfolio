@@ -2,7 +2,7 @@ import Swipers from "./Swipers";
 
 const Projects = (props) => {
   return (
-    <section id="projects" className=" container md:flex-row">
+    <section id="projects" className="container md:flex-row">
       <div className="head mb-4 md:absolute md:top-48 text-tx-500 md:text-left xl:-left-8 md:left-0">
         <h2
           className={`${

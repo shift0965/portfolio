@@ -1,8 +1,6 @@
-import Contact from "./Contact";
+import AboutMe from "./AboutMe";
 import Home from "./Home";
 import Projects from "./Projects";
-import About from "./About";
-import React from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BsMouse } from "react-icons/bs";
@@ -26,15 +24,14 @@ const MainPage = () => {
     const currentSlideIndex = props.getCurrentSlideIndex();
     useEffect(() => {
       if (currentSlideIndex === 0) delaySetCurrPage("home");
-      if (currentSlideIndex === 1) delaySetCurrPage("about");
-      if (currentSlideIndex === 2) delaySetCurrPage("projects");
-      if (currentSlideIndex === 3) delaySetCurrPage("contact");
-    }, [currentSlideIndex]);
+      if (currentSlideIndex === 1) delaySetCurrPage("projects");
+      if (currentSlideIndex === 2) delaySetCurrPage("aboutMe");
+      }, [currentSlideIndex]);
     return null;
   };
 
   return (
-    <motion.div
+  <motion.div
       initial={{ x: -window.innerWidth, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: -window.innerWidth, opacity: 0 }}
@@ -56,13 +53,10 @@ const MainPage = () => {
         <div className={`${currPage === "home" ? "active" : ""} navbtn`}>
           <div className="navline"></div>
         </div>
-        <div className={`${currPage === "about" ? "active" : ""} navbtn`}>
-          <div className="navline"></div>
-        </div>
         <div className={`${currPage === "projects" ? "active" : ""} navbtn`}>
           <div className="navline"></div>
         </div>
-        <div className={`${currPage === "contact" ? "active" : ""} navbtn`}>
+        <div className={`${currPage === "aboutMe" ? "active" : ""} navbtn`}>
           <div className="navline"></div>
         </div>
       </div>
@@ -72,13 +66,10 @@ const MainPage = () => {
           <Home isActive={currPage === "home"} />
         </Slide>
         <Slide>
-          <About isActive={currPage === "about"} />
-        </Slide>
-        <Slide>
           <Projects isActive={currPage === "projects"} />
         </Slide>
         <Slide>
-          <Contact isActive={currPage === "contact"} />
+          <AboutMe isActive={currPage === "aboutMe"} />
         </Slide>
       </FullPage>
     </motion.div>
