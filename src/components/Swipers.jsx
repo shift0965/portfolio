@@ -1,4 +1,4 @@
-import { project_info } from "./Information";
+import { projectInfo } from "./Information";
 import { BsArrowLeft } from "react-icons/bs";
 import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,9 +10,28 @@ import "swiper/css/pagination";
 
 const Swipers = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [projects, setProjects] = useState([]);
   const printoutNum = (swiper) => {
     setActiveIndex(swiper.activeIndex);
   };
+
+  useEffect(() => {
+    // health check for each project
+    const checkProjects = async () => {
+      const results = await Promise.all(
+        projectInfo.map(async (item) => {
+          try {
+            const res = await fetch(item.href, { method: "HEAD" });
+            return res.ok ? item : null;
+          } catch (err) {
+            return null;
+          }
+        })
+      );
+      setProjects(results.filter(Boolean));
+    };
+    checkProjects();
+  }, []);
 
   return (
     <Swiper
@@ -27,7 +46,7 @@ const Swipers = (props) => {
       }
     mySwiper md:left-1/2 xl:left-[60%] md:absolute 2xl:w-[420px] md:w-[320px] w-[240px] duration-700`}
     >
-      {project_info.map((item, index) => {
+      {projects.map((item, index) => {
         return (
           <SwiperSlide key={index}>
             <div className=" w-full md:py-[50px] py-[10px] px-5 grid grid-col-1 justify-center overflow-hidden">
@@ -43,8 +62,8 @@ const Swipers = (props) => {
                 <a
                   href={item.href}
                   target="_blank"
-                  className=" rounded-2xl py-1.5 px-7 inline-block md:mt-7 mt-5 duration-300
-                                                     bg-secondary-second hover:bg-secondary hover:text-primary opacity-90 text-tx font-bold"
+                  className="rounded-2xl py-1.5 px-7 inline-block md:mt-7 mt-5 duration-300 bg-secondary-second 
+                  hover:bg-secondary hover:text-primary opacity-90 text-tx font-bold"
                 >
                   Demo
                 </a>

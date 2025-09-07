@@ -7,7 +7,7 @@ import tedxNSYSU from "./imgs/tedx.png";
 import letscode from "./imgs/letscode.png";
 import shiportfolio from "./imgs/shiportfolio.png";
 
-export const project_info = [
+export const projectInfo = [
   {
     img: (
       <img src={letscode} alt="letscode" className="w-[80%] object-contain" />
@@ -17,14 +17,6 @@ export const project_info = [
     description: `Code together, code for fun! 
     A platform Inspired by LeetCode and Kahoot.`,
     href: "https://letscode.courater.com/",
-  },
-  {
-    img: <img src={tedxNSYSU} alt="tedx" className="" />,
-    title: "TedxNSYSU",
-    subtitle: "Event page",
-    description:
-      "18 minutes is short enough to create interest, long enough to change your life.",
-    href: "https://shift0965.github.io/tedxnsysu/",
   },
   {
     img: (
@@ -41,6 +33,14 @@ export const project_info = [
     href: "https://shift0965.github.io/sorting-visualizer/",
   },
   {
+    img: <img src={tedxNSYSU} alt="tedx" className="" />,
+    title: "TedxNSYSU",
+    subtitle: "Event page",
+    description:
+      "18 minutes is short enough to spark interest, yet long enough to change your life.",
+    href: "https://shift0965.github.io/tedxnsysu/",
+  },
+  {
     img: (
       <img
         src={shiportfolio}
@@ -48,9 +48,9 @@ export const project_info = [
         className="h-full max-h-full"
       />
     ),
-    title: `Shih's Portfolio`,
+    title: "Shih's Portfolio",
     subtitle: "Portfolio page",
-    description: "A English professor who inspired me and supported me a lot.",
+    description: "A English professor who inspired and supported me a lot.",
     href: "https://shift0965.github.io/shiportfolio/",
   },
 ];
