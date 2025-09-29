@@ -14,9 +14,9 @@ export const projectInfo = [
     ),
     title: "LetsCode",
     subtitle: "Coding Contest Web",
-    description: `Code together, code for fun! 
+    description: `Code together, code for fun!
     A platform Inspired by LeetCode and Kahoot.`,
-    href: "https://letscode.courater.com/",
+    href: "https://letscode.hungweb.com/",
   },
   {
     img: (
